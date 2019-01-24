@@ -8,17 +8,18 @@ BlazingSQL is a GPU accelerated SQL engine built on top of the RAPIDS data scien
 - CUDA 9.2
 - conda, see installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
 - You need to have a blazingsql environment ready, download from here: https://github.com/BlazingDB/blazingsql , file content:  **conda/environment/blazingsql-py35.yml**
+- Install supervisor: sudo apt-get install -y supervisor
 - Start running the next commands :   
 
 ```shell-script
 # Clone the file to blazingsql environment
 git clone https://github.com/BlazingDB/blazingsql
  
-# Into blazingsql/conda/environment execute the follow command create blazingsql environment
+# Into folder execute the follow command create blazingsql environment
 conda env create -f blazingsql-py35.yml
  
 # Activate the blazingsql environment
-source activate blazingsql_dev_py35
+source activate blazingsql
 ```
 ## Usage
 
