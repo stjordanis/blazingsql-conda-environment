@@ -6,45 +6,44 @@ BlazingSQL is a GPU accelerated SQL engine built on top of the RAPIDS data scien
 
 - Ubuntu 16.04 LTS
 - CUDA 9.2
-- conda, see installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
-- You need to have a blazingsql environment ready, download from here: https://github.com/BlazingDB/blazingsql , file content:  **conda/environment/blazingsql-py35.yml**
-- Install supervisor: sudo apt-get install -y supervisor
-- We need the script : save_environment_variables.sh to set the   environment variables, this is into this repo
-- Start running the next commands :   
+- conda
+  - See installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
 
 ```shell-script
-# Clone the file to blazingsql environment
-git clone https://github.com/BlazingDB/blazingsql
-cd blazingsql
+# Install supervisor dependency
+sudo apt-get install -y supervisor
 
-# Into folder execute the follow command create blazingsql environment
+# Clone the repo to create a blazingsql conda environment
+git clone https://github.com/BlazingDB/blazingsql-conda-environment
+cd blazingsql-conda-environment
+
+# Create blazingsql conda environment
 conda env create -f blazingsql-py35.yml
  
-# Activate the blazingsql environment
+# Activate the blazingsql conda environment
 source activate blazingsql
-```
 
-```shell-script
-./save_environment_variables.sh
+# Once in the conda environment, you will need to execute a one time script to setup environment variables specific for this conda environment
+./setup_environment_variables.sh
+
+# Activate the environment again to make the changes take place
 source activate blazingsql
 ```
 
 ## Usage
 
-Once the installation is ready you will have the command blazingsql. This command will manage the engine, so before run any query with **PyBlazing** you need to make sure blazingsql has started the engine.
+Once the installation is ready you will have the command *blazingsql*. This command will manage the engine, so before run any query with **PyBlazing** you need to make sure the blazingsql engine is running
 
-The command line tool blazingsql has 3 options: start, stop, restart, status. 
+The command line tool *blazingsql* has 4 options: start, stop, restart, status. 
 
-
-Start the BlazingSQL engine
 ```shell-script
+# To start the engine
 blazingsql start
-```
-
-The other commands are:
-```shell-script
+# To stop the engine
 blazingsql stop
+# To restart the engine
 blazingsql restart
+# To check its status
 blazingsql status
 ```
 
@@ -52,10 +51,9 @@ blazingsql status
 - To know more about blazingsql package: https://anaconda.org/BlazingDB/repo
 
 
-## pyblazing
-The pyblazing command is just a simple wrapper for python. This command acts exactly like python and internally resolve some environment variables needed by RAPIDS and BlazingSQL.
+## Try it out!
 
-First you need to check the BlazingSQL engine with:
+First check to make sure that BlazingSQL is running with:
 ```shell-script
 blazingsql status
 ```
@@ -112,9 +110,9 @@ result_gdf = pyblazing.run_query(sql, tables)
 print(sql)
 print(result_gdf)
 ```
-And finally run the script with pyblazing:
+And finally run the script:
 ```shell-script
-pyblazing example_cudf.py
+python example_cudf.py
 ```
 
 ## Pandas support
@@ -140,9 +138,9 @@ print(sql)
 print(result_gdf)
 ```
 
-Run the script with pyblazing:
+Run the script:
 ```shell-script
-pyblazing example_pandas.py
+python example_pandas.py
 ```
 
 Shutdown BlazingSQL
@@ -151,7 +149,9 @@ blazingsql stop
 ```
 
 **Note:**
-- To find  out more about **blazingdb** go next link: **https://blazingdb.com/#/**
+- You can find our **BlazingSQL** documentation at https://docs.blazingdb.com/
+- To know more about *blazingsql* package: https://anaconda.org/BlazingDB/repo
+- To find  out more about **BlazingDB** go next link: **https://blazingdb.com/#/**
 
 
 
