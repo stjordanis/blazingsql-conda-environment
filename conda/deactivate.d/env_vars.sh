@@ -1,9 +1,5 @@
 #!/bin/sh
 
-unset MY_KEY
-unset MY_FILE
-
-
 # add blazingdb and blazingdb-protocol python packages
 
 unset blazingsql_pypath
