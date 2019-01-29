@@ -6,6 +6,7 @@ BlazingSQL is a GPU accelerated SQL engine built on top of the RAPIDS data scien
 
 - Ubuntu 16.04 LTS
 - CUDA 9.2
+- Java 8
 - conda
   - See installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
 
