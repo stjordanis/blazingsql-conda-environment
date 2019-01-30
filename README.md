@@ -8,7 +8,7 @@ BlazingSQL is a GPU accelerated SQL engine built on top of the RAPIDS data scien
 - CUDA 9.2
 - Java 8
 - conda
-  - See installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
+- See installation:  https://conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html 
 
 ```shell-script
 # Install supervisor dependency
@@ -150,6 +150,7 @@ blazingsql stop
 ```
 
 **Note:**
+- Try not to install other python packages to avoid ruining your environment
 - You can find our **BlazingSQL** documentation at https://docs.blazingdb.com/
 - To know more about *blazingsql* package: https://anaconda.org/BlazingDB/repo
 - To find  out more about **BlazingDB** go next link: **https://blazingdb.com/#/**
