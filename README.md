@@ -150,7 +150,6 @@ blazingsql stop
 ```
 
 **Note:**
-- Try not to install other python packages to avoid ruining your environment
 - You can find our **BlazingSQL** documentation at https://docs.blazingdb.com/
 - To know more about *blazingsql* package: https://anaconda.org/BlazingDB/repo
 - To find  out more about **BlazingDB** go next link: **https://blazingdb.com/#/**
